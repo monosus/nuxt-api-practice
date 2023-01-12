@@ -9,6 +9,7 @@ export default defineEventHandler((event) => {
   for (let i = 0; i < qty; i++) {
     data.push({
       id: uuidv4(),
+      href: '#',
       image: faker.image.abstract(160, 124, true),
       text: faker.lorem.sentences(),
     })
