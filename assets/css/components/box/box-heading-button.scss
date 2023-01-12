@@ -1,0 +1,11 @@
+.c-box-heading-button {
+  display: inline-flex;
+  align-items: center;
+
+  > .c-button-text.-outline-purple {
+    margin-left: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+    min-height: 40px;
+  }
+}

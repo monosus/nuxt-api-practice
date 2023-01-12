@@ -1,0 +1,100 @@
+.c-button-icon {
+  $root: &;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 48px;
+  padding: 5px 44px 5px 20px;
+  border-radius: 4px;
+  border: none;
+  text-align: left;
+  color: $color-white;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: calc(24/16);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-family: $font-base;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 24px;
+    height: 24px;
+    background-image: url(~/assets/image/common/ico_arrow_right_white_large.svg);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: contain;
+    transform: translateY(-50%);
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 7px;
+  }
+
+  // style
+  &.-purple {
+    background-color: $color-purple;
+
+    &:hover {
+      background-color: $color-violet;
+    }
+  }
+
+  &.-outline-purple {
+    background-color: transparent;
+    border: 1px solid $color-purple;
+    color: $color-purple;
+
+    &::before {
+      right: 19px;
+      background-image: url(~/assets/image/common/ico_arrow_next_purple.svg);
+    }
+
+    &:hover {
+      background-color: $color-orchid;
+    }
+  }
+
+  &.-outline-purple {
+    padding-left: 19px;
+  }
+
+  &[target='_blank'] {
+    &::before {
+      background-image: url(~/assets/image/common/ico_blank_white.svg);
+    }
+
+    &.-outline-purple {
+      padding-right: 35px;
+
+      &::before {
+        right: 11px;
+        background-image: url(~/assets/image/common/ico_blank_purple.svg);
+      }
+    }
+  }
+
+  &.-icon {
+    padding-left: 12px;
+    padding-right: 12px;
+
+    &::before {
+      display: none;
+    }
+
+    #{$root}__text {
+      flex: 1;
+    }
+
+    &.-outline-purple {
+      padding-left: 11px;
+      padding-right: 11px;
+    }
+  }
+}

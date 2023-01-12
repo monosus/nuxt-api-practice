@@ -1,0 +1,58 @@
+.c-header-bar-static {
+  $this: &;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: $z-index-header-bar;
+  width: 100%;
+  padding: 0 64px 0 calc(18.75% + 64px);
+  background-color: $color-fog;
+
+  @include mq-max(1279) {
+    position: static;
+    padding: 0;
+  }
+
+  &.-no-sticky {
+    position: static;
+  }
+
+  &.-sp-hide {
+    @include mq-max(1279) {
+      display: none;
+    }
+  }
+
+  &__in {
+    display: flex;
+    align-items: center;
+    max-width: 1024px;
+    height: 80px;
+    margin: 0 auto;
+    padding: 18px 0;
+
+    @include mq-max(1279) {
+      display: block;
+      width: 83.2%;
+      height: auto;
+      padding: 19px 0;
+    }
+
+    @include mq(sm) {
+      width: auto;
+      padding: 18px 24px;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 0 16px;
+    font-size: 2.4rem;
+    font-weight: bold;
+
+    @include mq-max(1279) {
+      font-size: 1.8rem;
+    }
+  }
+}

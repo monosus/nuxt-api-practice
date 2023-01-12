@@ -1,0 +1,6 @@
+<svg id="icon_lock" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="Group_41157" data-name="Group 41157" transform="translate(-15 -2415)">
+    <rect id="Rectangle_20485" data-name="Rectangle 20485" width="24" height="24" transform="translate(15 2415)" fill="none"/>
+    <path id="notifications_black_24dp" d="M12,22a2.006,2.006,0,0,0,2-2H10A2,2,0,0,0,12,22Zm6-6V11c0-3.07-1.64-5.64-4.5-6.32V4a1.5,1.5,0,0,0-3,0v.68C7.63,5.36,6,7.92,6,11v5L4,18v1H20V18Z" transform="translate(15 2414.5)" fill="#fff"/>
+  </g>
+</svg>

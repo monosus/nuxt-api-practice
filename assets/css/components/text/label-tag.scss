@@ -1,0 +1,43 @@
+.c-label-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-align: center;
+  color: $color-white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: calc(18/14);
+
+  // style
+  &.-gray {
+    background-color: $color-silver;
+  }
+
+  &.-purple {
+    background-color: $color-purple;
+  }
+
+  &.-red {
+    background-color: $color-red;
+  }
+
+  &.-black {
+    background-color: $color-main;
+  }
+
+  &.-gradient-blue {
+    background: $gradient-blue;
+  }
+
+  &.-gradient-orange {
+    background: $gradient-orange;
+  }
+
+  &.-wide {
+    padding: 2px 12px;
+  }
+
+  &.-radius-sm {
+    border-radius: 2px;
+  }
+}

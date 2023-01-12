@@ -1,0 +1,30 @@
+.c-list-comment {
+  &__item {
+    padding: 18px 0 12px;
+    border-bottom: 1px solid $color-fog;
+    font-size: 1.6rem;
+    line-height: 1.625;
+  }
+
+  &__text {
+    white-space: pre-line;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+  }
+
+  &__date {
+    flex: 0 0 auto;
+    min-width: 80px;
+    font-size: 1.2rem;
+    color: $color-gray;
+  }
+
+  &__author {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,92 @@
+.c-csv-upload {
+  $this: &;
+
+  &__area {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 280px;
+    background-color: $color-cloud;
+    border: 1px dashed $color-silver;
+    border-radius: 16px;
+  }
+
+  &__area-in {
+    text-align: center;
+  }
+
+  &__icon {
+    display: block;
+    width: 64px;
+    margin: 0 auto 5px;
+  }
+
+  &__max {
+    margin-top: 16px;
+    font-size: 1.4rem;
+    color: $color-gray;
+  }
+
+  &__input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &__info {
+    position: relative;
+    margin-top: 48px;
+    padding: 16px 20px;
+    background-color: $color-cloud;
+    border-radius: 16px;
+    text-align: center;
+    font-size: 1.4rem;
+    color: $color-gray;
+    line-height: 1;
+
+    &.-active {
+      background-color: $color-orchid;
+
+      #{$this}__file {
+        color: $color-main;
+      }
+    }
+
+    &::before {
+      position: absolute;
+      top: -32px;
+      left: 50%;
+      z-index: 1;
+      width: 40px;
+      height: 16px;
+      background: url(~/assets/image/common/ico_arrow_down_purple.svg) no-repeat;
+      background-size: contain;
+      transform: translateX(-50%);
+      content: '';
+    }
+  }
+
+  &__file {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-weight: bold;
+  }
+
+  &__close {
+    width: 24px;
+    height: 24px;
+    margin-left: 4px;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    background: url(~/assets/image/common/ico_close_gray.svg) no-repeat;
+    background-size: contain;
+    appearance: none;
+    cursor: pointer;
+  }
+}

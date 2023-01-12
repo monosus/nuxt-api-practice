@@ -1,0 +1,102 @@
+.c-link-item {
+  $root: &;
+  color: $color-purple;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: calc(24 / 16);
+
+  @include mq(md) {
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  &[target='_blank'] {
+    #{$root}__inner {
+      &::after {
+        content: '';
+        display: inline-block;
+        position: relative;
+        top: -1px;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background-image: url(~/assets/image/common/ico_blank_purple.svg);
+        background-repeat: no-repeat;
+        background-position: left top;
+        background-size: contain;
+        vertical-align: top;
+        line-height: 0;
+      }
+
+      &.-icon {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    line-height: 0;
+
+    img {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+    }
+  }
+
+  &__inner {
+    &.-icon {
+      display: inline-flex;
+
+      #{$root}__text {
+        flex: 1;
+      }
+    }
+
+    &.-left {
+      #{$root}__icon {
+        margin-right: 4px;
+      }
+    }
+
+    &.-right {
+      #{$root}__icon {
+        order: 2;
+      }
+
+      #{$root}__text {
+        order: 1;
+      }
+    }
+  }
+
+  &__text {
+    text-decoration: underline;
+  }
+
+  &:hover {
+    @include mq(md) {
+      opacity: 0.8;
+    }
+  }
+
+  &.-no-underline {
+    #{$root}__text {
+      text-decoration: none;
+    }
+  }
+
+  &.-font-sm {
+    font-size: 1.4rem;
+    line-height: calc(24 / 14);
+  }
+
+  &.-color-gray {
+    color: $color-gray;
+  }
+
+  &.-color-white {
+    color: $color-white;
+  }
+}

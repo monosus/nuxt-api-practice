@@ -1,0 +1,78 @@
+.c-card-status {
+  border-radius: 20px 20px 20px 0;
+  background-color: $color-wisteria;
+
+  &__upper {
+    position: relative;
+    padding: 19px 42px 15px 19px;
+    display: block;
+    border-radius: 20px 20px 20px 0;
+    background: $color-white;
+    border: 1px solid $color-orchid;
+    box-shadow: 1px 1px 20px rgba(34, 40, 49, 0.1);
+    color: $color-main;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 18px;
+      width: 7px;
+      height: 12px;
+      transform: translateY(-50%);
+      background: url(~/assets/image/member/common/ico_arrow_right_gray.svg) no-repeat left top;
+      background-size: contain;
+    }
+  }
+
+  &__under {
+    position: relative;
+    padding: 11px 42px 11px 20px;
+    display: flex;
+    border-radius: 0 0 20px 0;
+    color: $color-main;
+    font-size: 1.4rem;
+    line-height: calc(24 / 14);
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 19px;
+      width: 7px;
+      height: 12px;
+      transform: translateY(-50%);
+      background: url(~/assets/image/member/common/ico_arrow_right_purple.svg) no-repeat left top;
+      background-size: contain;
+    }
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+
+    &-number {
+      margin-left: 8px;
+      font-size: 1.6rem;
+      line-height: calc(20 / 16);
+    }
+  }
+
+  &__title {
+    margin: 11px 0 0 -3px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: calc(36 / 24);
+  }
+
+  &__date {
+    margin-top: 17px;
+    font-size: 1.4rem;
+    color: $color-gray;
+    line-height: 1;
+  }
+
+  &__number {
+    margin-left: 10px;
+  }
+}

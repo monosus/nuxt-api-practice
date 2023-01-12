@@ -1,0 +1,68 @@
+.c-table-show-csv {
+  $root: &;
+  width: 100%;
+  margin-top: 11px;
+
+  &__thead {
+    #{$root}__th {
+      &:first-child {
+        padding-left: 16px;
+        border-radius: 4px 0 0 4px;
+      }
+
+      &:last-child {
+        border-radius: 0 4px 4px 0;
+      }
+    }
+  }
+
+  &__th {
+    padding: 8px 0;
+    background-color: $color-fog;
+    text-align: left;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: calc(24/14);
+  }
+
+  &__tbody {
+    #{$root}__tr {
+      &:first-child {
+        #{$root}__td {
+          padding-top: 10px;
+        }
+      }
+    }
+  }
+
+  &__td {
+    padding: 3px 32px 3px 0;
+    color: $color-red;
+    font-size: 1.4rem;
+    line-height: calc(24/14);
+
+    &:first-child {
+      width: 103px;
+      padding-left: 16px;
+    }
+
+    &:nth-child(2) {
+      width: 148px;
+    }
+
+    &:nth-child(3) {
+      width: 232px;
+
+      > p {
+        overflow: hidden;
+        width: 200px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    &:last-child {
+      padding-right: 16px;
+    }
+  }
+}

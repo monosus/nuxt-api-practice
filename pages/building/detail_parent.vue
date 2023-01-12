@@ -1,0 +1,163 @@
+<template>
+  <div>
+    <LayoutDefault
+      pageTitle="A-1000002 / （とある親申請の）届"
+      labelText="承認済み"
+      labelStyle="purple"
+      :current="2"
+    >
+      <template #headerButton>
+        <ButtonText text="差し戻し画面へ" styles="outline-purple" />
+        <ButtonText text="承認画面へ" styles="purple" />
+      </template>
+
+      <div class="l-section-default">
+        <div class="l-section-default__in -pad-memo _pt-8">
+          <LinkItem
+            href="#"
+            text="一覧画面へ戻る"
+            iconName="arrow_prev_purple"
+            hasNoUnderline
+          />
+          <TitleBorder class="_mt-40" tag="h2">申請概要</TitleBorder>
+          <dl class="c-form-confirm _mt-15">
+            <div class="c-form-confirm__row">
+              <dt class="c-form-confirm__title">ステータス</dt>
+              <dd class="c-form-confirm__data">承認済み</dd>
+            </div>
+            <div class="c-form-confirm__row">
+              <dt class="c-form-confirm__title">申請日</dt>
+              <dd class="c-form-confirm__data">2022/12/20</dd>
+            </div>
+            <div class="c-form-confirm__row">
+              <dt class="c-form-confirm__title">申請No.</dt>
+              <dd class="c-form-confirm__data">A-1000002</dd>
+            </div>
+            <div class="c-form-confirm__row">
+              <dt class="c-form-confirm__title">申請名</dt>
+              <dd class="c-form-confirm__data">作業届</dd>
+            </div>
+            <div class="c-form-confirm__row">
+              <dt class="c-form-confirm__title">申請ファイル</dt>
+              <dd class="c-form-confirm__data">
+                <ul class="c-list-download">
+                  <li class="c-list-download__item">
+                    <LinkItem
+                      href="#"
+                      iconName="download"
+                      text="作業届.xlxs"
+                      isTargetBlank
+                    />
+                  </li>
+                  <li class="c-list-download__item">
+                    <LinkItem
+                      href="#"
+                      iconName="download"
+                      text="添付ファイル1.xlxs"
+                      isTargetBlank
+                    />
+                  </li>
+                  <li class="c-list-download__item">
+                    <LinkItem
+                      href="#"
+                      iconName="download"
+                      text="添付ファイル2.xlxs"
+                      isTargetBlank
+                    />
+                  </li>
+                </ul>
+              </dd>
+            </div>
+            <div class="c-form-confirm__row">
+              <dt class="c-form-confirm__title">ビル</dt>
+              <dd class="c-form-confirm__data">PMO EX 日本橋茅場町</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="l-section-default__in -pad-memo">
+          <TitleBorder tag="h2">関連申請</TitleBorder>
+          <dl class="c-form-confirm _mt-15">
+            <div class="c-form-confirm__row">
+              <dt class="c-form-confirm__title">子申請</dt>
+              <dd class="c-form-confirm__data">
+                <dl class="c-list-link-tag">
+                  <dt><LabelTag text="未対応" styles="red" /></dt>
+                  <dd>
+                    <LinkItem href="#" text="A-1000001 / 〇〇〇〇〇〇〇〇届" />
+                  </dd>
+                  <dt><LabelTag text="差し戻し中" styles="black" /></dt>
+                  <dd>
+                    <LinkItem href="#" text="A-1000001 / 〇〇〇〇〇〇〇〇届" />
+                  </dd>
+                  <dt><LabelTag text="承認済み" styles="purple" /></dt>
+                  <dd>
+                    <LinkItem href="#" text="A-1000001 / 〇〇〇〇〇〇〇〇届" />
+                  </dd>
+                </dl>
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="l-section-default__in -pad-memo">
+          <TitleBorder tag="h2">申請者情報</TitleBorder>
+          <dl class="c-form-confirm _mt-15">
+            <div class="c-form-confirm__row">
+              <dt class="c-form-confirm__title">氏名</dt>
+              <dd class="c-form-confirm__data">山田 山太郎</dd>
+            </div>
+            <div class="c-form-confirm__row">
+              <dt class="c-form-confirm__title">氏名（カナ）</dt>
+              <dd class="c-form-confirm__data">ヤマダ ヤマタロウ</dd>
+            </div>
+            <div class="c-form-confirm__row">
+              <dt class="c-form-confirm__title">メールアドレス</dt>
+              <dd class="c-form-confirm__data">
+                yamataro.yamada@worklifeplus.co.jp
+              </dd>
+            </div>
+            <div class="c-form-confirm__row">
+              <dt class="c-form-confirm__title">電話番号</dt>
+              <dd class="c-form-confirm__data">09000001234</dd>
+            </div>
+            <div class="c-form-confirm__row">
+              <dt class="c-form-confirm__title">企業名</dt>
+              <dd class="c-form-confirm__data">株式会社テナントオフィス</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="l-section-default__in -pad-memo">
+          <TitleBorder tag="h2">コメント履歴</TitleBorder>
+          <ListComment :comments="comments" />
+        </div>
+
+        <div class="l-section-default__in -pad-memo _pt-24">
+          <ButtonText text="この申請を取り消す" styles="outline-red" />
+        </div>
+      </div>
+
+      <BoxMemo />
+    </LayoutDefault>
+  </div>
+</template>
+
+<script>
+export default {
+  setup() {
+    useHead({ title: 'ビル申請管理_ビル申請_詳細(親)' })
+    const comments = [
+      {
+        text: '申請内容のご確認のほど宜しくお願い申し上げます。',
+        date: '2022/12/20',
+        author: '申請者：山田 山太郎',
+      },
+    ]
+
+    return {
+      comments,
+    }
+  },
+}
+</script>

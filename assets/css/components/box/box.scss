@@ -1,0 +1,338 @@
+/* c-box-info
+---------------------------------------------------------- */
+.c-box-info {
+  padding-bottom: 40px;
+  margin: 12px 0 63px;
+  border-bottom: 1px solid $color-fog;
+
+  &__in {
+    padding: 22px 26px 18px;
+    background: $color-orchid;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  &__category {
+    color: $color-purple;
+
+    &.-color-gray {
+      color: $color-gray;
+    }
+  }
+
+  &__text {
+    margin-top: 6px;
+    font-weight: 500;
+    line-height: 1.66;
+  }
+
+  &__bold {
+    font-weight: bold;
+  }
+}
+
+/* c-box-terms
+---------------------------------------------------------- */
+.c-box-terms {
+  &__box-text {
+    overflow-y: auto;
+    height: 320px;
+    padding: 24px 39px 24px 23px;
+    background-color: $color-white;
+    border: 1px solid $color-silver;
+    border-radius: 4px;
+
+    @include mq(sm) {
+      padding: 32px 50px 32px 28px;
+    }
+  }
+
+  &__box {
+    &:not(:first-child) {
+      margin-top: 28px;
+    }
+
+    .c-text-default {
+      &.-fw-bold {
+        + .c-text-default {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .c-list-number {
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  &__agree {
+    margin-top: 26px;
+    text-align: center;
+  }
+}
+
+/* c-box-heading-detail
+---------------------------------------------------------- */
+.c-box-heading-detail {
+  margin-top: 55px;
+
+  @include mq(sm) {
+    margin-top: 22px;
+  }
+
+  &__heading {
+    font-size: 3.2rem;
+    font-weight: bold;
+    line-height: 1.625;
+
+    @include mq(sm) {
+      font-size: 2rem;
+    }
+  }
+
+  &__item {
+    &:not(:first-child) {
+      margin-left: 8px;
+    }
+  }
+
+  &__under {
+    margin-top: 6px;
+    display: inline-flex;
+  }
+
+  &__tag {
+    display: inline-flex;
+  }
+
+  &__date {
+    margin-left: 15px;
+    color: $color-gray;
+    font-weight: bold;
+
+    @include mq(sm) {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+/* c-box-text-detail
+---------------------------------------------------------- */
+.c-box-text-detail {
+  margin-top: 58px;
+  font-weight: 500;
+
+  @include mq(sm) {
+    margin-top: 35px;
+  }
+
+  &.-small {
+    margin-top: 26px;
+
+    @include mq(sm) {
+      margin-top: 35px;
+    }
+  }
+
+  &__tag {
+    display: inline-flex;
+    margin-top: 8px;
+  }
+
+  &__item {
+    &:not(:first-child) {
+      margin-left: 5px;
+    }
+  }
+}
+
+.c-box-bg {
+  border-radius: 8px;
+  background: $color-white;
+  padding: 32px;
+
+  &.-gray {
+    background: $color-cloud;
+  }
+}
+
+/** service -page*/
+/* c-box-service
+---------------------------------------------------------- */
+.c-box-service {
+  margin-top: 50px;
+
+  & + & {
+    margin-top: 72px;
+  }
+}
+
+.c-box-heading-service {
+  margin-top: 64px;
+
+  @include mq(sm) {
+    margin-top: 42px;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 2.4rem;
+    line-height: calc(36 / 24);
+
+    @include mq(sm) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__text {
+    margin-top: 26px;
+    line-height: calc(26 / 16);
+  }
+
+  &__office {
+    margin-top: 16px;
+  }
+
+  & &__list-image {
+    margin-top: 40px;
+  }
+
+  &__button {
+    margin-top: 40px;
+
+    @include mq(md) {
+      margin-top: 48px;
+      width: 400px;
+    }
+  }
+
+  &__link {
+    margin-top: 28px;
+    display: inline-block;
+  }
+}
+
+.c-box-detail-service {
+  margin-top: 48px;
+  padding-top: 48px;
+  border-top: 1px solid $color-cloud;
+
+  &:last-child {
+    @include mq(md) {
+      padding-bottom: 48px;
+      border-bottom: 1px solid $color-cloud;
+    }
+  }
+}
+
+/* c-box-login
+---------------------------------------------------------- */
+.c-box-login {
+  @include mq(md) {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    padding: 64px;
+  }
+
+  &__box {
+    flex: 0 0 auto;
+    width: 430px;
+    padding: 48px;
+    margin: auto;
+    box-shadow: 0px 8px 30px rgba($color-main, 0.2);
+    border: 1px solid rgba($color-white, 0.3);
+    background-color: $color-white;
+    border-radius: 8px;
+
+    @include mq(sm) {
+      width: auto;
+      padding: 40px 20px 20px;
+      background: $color-snow;
+      box-shadow: none;
+      border: none;
+      border-radius: 0;
+    }
+  }
+
+  &__logo {
+    display: block;
+    width: 166px;
+    margin: 0 auto 48px;
+  }
+}
+
+/* c-box-faq-content
+---------------------------------------------------------- */
+.c-box-faq-content {
+  & + & {
+    margin-top: 79px;
+  }
+
+  .c-title-border {
+    margin-bottom: 15px;
+  }
+}
+
+/* c-box-answer
+---------------------------------------------------------- */
+.c-box-answer {
+  display: grid;
+  grid-row-gap: 18px;
+
+  &__image {
+    overflow: hidden;
+    margin-left: 8px;
+    border-radius: 8px;
+    line-height: 0;
+
+    @include mq(md) {
+      max-width: 480px;
+    }
+
+    @include mq(sm) {
+      width: calc(100% - 8px);
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+/* c-box-contact
+---------------------------------------------------------- */
+.c-box-contact {
+  display: grid;
+  grid-row-gap: 13px;
+  padding: 35px 40px 40px;
+  background-color: $color-wisteria;
+
+  @include mq(md) {
+    border-radius: 8px;
+  }
+
+  @include mq(sm) {
+    margin: 0 -20px;
+    padding: 35px 20px 40px;
+  }
+
+  .c-button-icon {
+    margin-top: 6px;
+
+    @include mq(md) {
+      width: 100%;
+      max-width: 400px;
+      margin: 6px auto 0;
+    }
+
+    &::before {
+      right: 12px;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+.c-modal-image {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $color-charcoal;
+  transition: opacity 0.3s ease;
+  transform: translateZ(1px);
+
+  &__close {
+    line-height: 1.5;
+    position: absolute;
+    color: $color-white;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    padding-left: 28px;
+    background: url(~/assets/image/member/common/icon_close_modal.svg) 0 0
+      no-repeat;
+
+    @include mq(sm) {
+      right: 20px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &__container {
+    margin: auto;
+    transition: all 0.3s ease;
+    max-height: calc(100% - 100px);
+    overflow-y: auto;
+
+    @include mq(md) {
+      max-width: 768px;
+    }
+  }
+
+  &__image {
+    width: calc(100% - 48px);
+    margin: 0 auto;
+
+    img {
+      width: 100%;
+      height: auto;
+      box-shadow: 1px 1px 20px rgba(100, 55, 203, 0.15);
+    }
+  }
+}
+
+/* vue transition */
+.modal-image-enter-active,
+.modal-image-leave-active {
+  transition: opacity 0.1s ease;
+}
+
+.modal-image-enter-from,
+.modal-image-leave-to {
+  opacity: 0;
+}

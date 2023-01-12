@@ -1,0 +1,83 @@
+.c-bottom-bar {
+  $this: &;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  min-width: 1280px;
+  z-index: $z-index-float-bar;
+  backdrop-filter: blur(2px);
+
+  &__in {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 1280px;
+    max-width: 1920px;
+    height: 80px;
+    margin: 0 auto;
+    padding: 18px 40px 18px calc(18.75% + 40px);
+    background-color: rgba($color-cloud, 0.8);
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+
+  &__button {
+    display: flex;
+    gap: 0 16px;
+  }
+
+  &.-responsive {
+    min-width: 0;
+
+    #{$this}__in {
+      min-width: 0;
+      padding-left: calc(18.75% + 64px);
+
+      @include mq-max(1280) {
+        padding-left: 304px;
+      }
+
+      @include mq(sm) {
+        padding-left: 20px;
+      }
+    }
+  }
+
+  &.-static-sp {
+    @include mq(sm) {
+      position: static;
+      min-width: 0;
+      backdrop-filter: none;
+    }
+
+    #{$this}__in {
+      @include mq(sm) {
+        display: block;
+        min-width: 0;
+        height: auto;
+        padding: 0;
+        background: none;
+      }
+    }
+
+    #{$this}__button {
+      @include mq(sm) {
+        display: flex;
+        flex-direction: column;
+        gap: 24px 0;
+      }
+    }
+  }
+
+  &.-reverse {
+    #{$this}__button {
+      @include mq(sm) {
+        flex-direction: column-reverse !important;
+      }
+    }
+  }
+}

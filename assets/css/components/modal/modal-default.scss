@@ -1,0 +1,81 @@
+.c-modal-default {
+  $root: &;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(~/assets/image/common/bg_modal.png);
+  background-repeat: repeat;
+  background-position: 0 0;
+  transition: opacity 0.3s ease;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &__inner {
+    width: 100%;
+    padding: 20px;
+  }
+
+  &__container {
+    max-width: 576px;
+    width: 100%;
+    margin: 0px auto;
+    padding: 62px 78px;
+    background-color: $color-white;
+    border-radius: 20px;
+    border: 2px solid rgba($color-fog, 0.7);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    text-align: center;
+
+    @include mq(sm) {
+      padding: 40px 24px;
+    }
+  }
+
+  &._border-radius-4 {
+    #{$root}__container {
+      border-radius: 4px;
+    }
+  }
+}
+
+.modal-container {
+  display: grid;
+  grid-row-gap: 24px;
+
+  .c-list-button {
+    margin-top: 24px;
+  }
+}
+
+/* vue transition */
+.modal-enter-active,
+.modal-leave-active {
+  transition: opacity 0.1s linear;
+}
+
+.modal-enter,
+.modal-leave-to {
+  opacity: 0;
+}
+
+.modal-enter-active .c-modal-default__container,
+.modal-leave-active .c-modal-default__container {
+  transition: all 0.1s linear;
+}
+
+.modal-enter .c-modal-default__container,
+.modal-leave-to .c-modal-default__container {
+  transform: scale(1.1);
+}

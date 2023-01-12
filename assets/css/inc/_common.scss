@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#__nuxt,
+#__layout {
+  height: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-base;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: $color-main;
+  line-height: 1.4;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  background-color: $color-cloud;
+}
+
+img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: $color-purple;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+strong {
+  font-weight: bold;
+}
+
+.body-fixed {
+  overflow: hidden;
+}

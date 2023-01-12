@@ -1,0 +1,53 @@
+.c-button-result {
+  $root: &;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  min-height: 40px;
+  padding: 4px 47px 4px 15px;
+  background-color: $color-cloud;
+  border: 1px solid $color-purple;
+  border-radius: 22px;
+  font-size: 1.6rem;
+  line-height: 1.5;
+
+  &__text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    width: 24px;
+    height: 24px;
+    background-image: url(~/assets/image/common/ico_close_gray.svg);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: contain;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  // style
+  &.-purple {
+    background-color: $color-white;
+
+    #{$root}__icon {
+      background-image: url(~/assets/image/common/ico_close_purple.svg);
+    }
+  }
+
+  &.-gray {
+    min-height: 32px;
+    padding: 4px 44px 4px 12px;
+    border: none;
+
+    #{$root}__icon {
+      right: 14px;
+    }
+  }
+}

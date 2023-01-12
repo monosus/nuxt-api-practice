@@ -1,0 +1,136 @@
+.c-card-post-item {
+  $root: &;
+  display: flex;
+  gap: 0 24px;
+  transition: opacity 0.2s ease-in-out;
+
+  @include mq(sm) {
+    flex-direction: column;
+  }
+
+  &:hover {
+    @include mq(md) {
+      opacity: 0.8;
+    }
+  }
+
+  &__img {
+    flex: 0 0 auto;
+    width: 256px;
+    overflow: hidden;
+
+    a {
+      display: block;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: none;
+      border-radius: 8px;
+    }
+
+    @include mq(sm) {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    padding-top: 22px;
+
+    @include mq(sm) {
+      padding-top: 0;
+    }
+
+    #{$root}__tag {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 8px 8px;
+
+      @include mq(sm) {
+        margin-top: 16px;
+      }
+    }
+
+    #{$root}__text {
+      margin-top: 10px;
+      font-size: 1.6rem;
+      font-weight: bold;
+      line-height: calc(26 / 16);
+      color: $color-main;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+
+      @include mq(sm) {
+        -webkit-line-clamp: 3;
+      }
+    }
+
+    #{$root}__date {
+      margin-top: 10px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      line-height: calc(22 / 14);
+      color: $color-gray;
+    }
+  }
+
+  &.-is-top {
+    align-items: center;
+
+    @include mq(sm) {
+      gap: 0 16px;
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    #{$root}__content {
+      padding-top: 0;
+    }
+
+    #{$root}__img {
+      @include mq(sm) {
+        position: relative;
+        flex: 0 0 auto;
+        width: 120px;
+        height: 120px;
+      }
+
+      img {
+        @include mq(sm) {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    #{$root}__tag {
+      @include mq(sm) {
+        margin-top: 0;
+      }
+    }
+
+    #{$root}__text {
+      @include mq(sm) {
+        margin-top: 4px;
+        font-size: 1.4rem;
+        -webkit-line-clamp: 2;
+      }
+    }
+
+    #{$root}__date {
+      @include mq(sm) {
+        margin-top: 0;
+      }
+    }
+  }
+}

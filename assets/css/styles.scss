@@ -1,0 +1,38 @@
+@import 'inc/variables';
+@import 'inc/mediaquery';
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap');
+
+// common
+@import 'inc/reset';
+@import 'inc/common';
+
+// layouts
+@import 'layout';
+
+// components
+@import 'components/box';
+@import 'components/button';
+@import 'components/card';
+@import 'components/form';
+@import 'components/link';
+@import 'components/list';
+@import 'components/modal';
+@import 'components/navigation';
+@import 'components/sticky';
+@import 'components/tab';
+@import 'components/table';
+@import 'components/text';
+@import 'components/thumbnail';
+@import 'components/title';
+@import 'components/hero';
+@import 'components/video';
+
+// pages
+@import 'page/index';
+
+// helper
+@import 'inc/display';
+@import 'inc/alignment';
+@import 'inc/helper';

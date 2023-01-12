@@ -1,0 +1,11 @@
+.c-box-attach {
+  padding: 16px;
+  background: $color-cloud;
+  border-radius: 4px;
+
+  &__item {
+    &:not(:first-child) {
+      margin-top: 16px;
+    }
+  }
+}

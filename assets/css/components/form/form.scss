@@ -1,0 +1,288 @@
+.c-form-default {
+  $this: &;
+
+  &__row {
+    &:not(:first-child) {
+      margin-top: 32px;
+    }
+
+    &.-footer {
+      border-top: 1px solid $color-fog;
+      padding-top: 16px;
+    }
+  }
+
+  &__select {
+    width: 272px;
+  }
+
+  &__select-category {
+    width: 335px;
+    @include mq(sm) {
+      width: 100%;
+    }
+  }
+
+  &.-wide {
+    #{$this}__row {
+      width: 576px;
+
+      &.-full {
+        width: auto;
+      }
+
+      &:not(:first-child) {
+        margin-top: 48px;
+      }
+    }
+  }
+}
+
+.c-form-confirm {
+  $root: &;
+
+  &.-member {
+    .c-form-confirm__row {
+      @include mq(sm) {
+        padding: 20px 0;
+        display: block;
+      }
+    }
+
+    .c-form-confirm__data {
+      @include mq(sm) {
+        margin-top: 4px;
+        padding-left: 0;
+      }
+    }
+  }
+
+  &.-data-full {
+    #{$root}__data {
+      flex: 1;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: flex-start;
+    min-width: 24px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba($color-geyser, 0.5);
+
+    &.-align-center {
+      align-items: center;
+    }
+  }
+
+  &__title {
+    flex: 0 0 auto;
+    min-width: 118px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.75;
+  }
+
+  &__data {
+    padding-left: 10px;
+    font-size: 1.6rem;
+    line-height: 1.5625;
+  }
+
+  &__box-border {
+    &:not(:first-child) {
+      margin-top: 24px;
+      padding: 18px 0 4px;
+      border-top: 1px dashed $color-fog;
+    }
+  }
+}
+
+.c-form-info {
+  margin-top: 56px;
+
+  &__row {
+    &:not(:first-child) {
+      margin-top: 50px;
+    }
+  }
+
+  &__title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1;
+
+    &-require {
+      margin-left: 15px;
+      color: $color-red;
+      font-weight: 500;
+    }
+  }
+
+  &__data {
+    margin-top: 12px;
+    font-size: 1.6rem;
+    line-height: calc(26 / 16);
+
+    &.-text-emphasize {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    &-label {
+      margin-left: 7px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      background-color: $color-purple;
+      color: $color-white;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+  }
+}
+
+.c-form-accordion {
+  overflow: hidden;
+  max-height: 0;
+
+  &__in {
+    padding-top: 32px;
+  }
+
+  &.-open {
+    overflow: visible;
+  }
+
+  &.v-enter-active,
+  &.v-leave-active {
+    transition: max-height 0.2s ease-out;
+  }
+}
+
+.c-form-accordion-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid $color-silver;
+
+  &__accordion {
+    position: relative;
+    display: inline-block;
+    padding-right: 28px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: $color-purple;
+    cursor: pointer;
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 24px;
+      height: 24px;
+      background: url(~/assets/image/common/ico_arrow_down_purple_02.svg)
+        no-repeat;
+      background-size: contain;
+      transform: translateY(-50%);
+      content: '';
+    }
+
+    &.-open::after {
+      transform: rotate(180deg) translateY(50%);
+    }
+  }
+}
+
+.c-form-profile-confirm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 32px;
+
+  @include mq(sm) {
+    display: block;
+  }
+
+  &__row {
+    width: calc(50% - 16px);
+    padding: 24px 0 22px;
+    border-bottom: 1px solid $color-wisteria;
+
+    @include mq(sm) {
+      width: 100%;
+    }
+
+    &.-full {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  &__data {
+    margin-top: 12px;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    word-break: break-all;
+
+    &.-color-gray {
+      color: $color-gray;
+    }
+  }
+
+  &.-complete {
+    width: 720px;
+    @include mq(sm) {
+      width: 100%;
+    }
+  }
+}
+
+.c-form-account-register {
+  max-width: 400px;
+  margin: 0 auto;
+  padding-top: 64px;
+
+  @include mq(sm) {
+    max-width: none;
+    padding-top: 25px;
+  }
+
+  &.-personal {
+    padding: 64px 64px 0 calc(18.75% + 28px);
+    max-width: none;
+
+    @include mq(sm) {
+      padding-top: 48px;
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+.c-form-application-edit {
+  &__row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    min-width: 24px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba($color-geyser, 0.5);
+  }
+  &__title {
+    flex: 1;
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: calc(26/16);
+  }
+  &__action {
+    text-align: right;
+    width: 30%;
+  }
+}

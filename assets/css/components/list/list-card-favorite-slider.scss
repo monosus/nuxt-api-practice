@@ -1,0 +1,13 @@
+.c-list-card-favorite-slider {
+  position: relative;
+  z-index: 2;
+
+  .swiper {
+    overflow: visible;
+  }
+
+  .swiper-slide {
+    width: 72px;
+  }
+}
+

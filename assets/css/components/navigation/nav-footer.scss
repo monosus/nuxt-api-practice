@@ -1,0 +1,149 @@
+.c-nav-footer {
+  &__footer {
+    position: relative;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 56px 0 40px;
+    z-index: 2;
+
+    @include mq-max(1279) {
+      width: 83.2%;
+    }
+
+    @include mq(sm) {
+      width: auto;
+      padding: 20px 0;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 80px;
+      width: 160px;
+      height: 220px;
+      background-color: $color-yellow;
+      z-index: -1;
+
+      @include mq(sm) {
+        right: 20px;
+        height: 100%;
+      }
+    }
+  }
+
+  &__in {
+    padding: 24px;
+    border-radius: 8px;
+    background-color: $color-main;
+
+    @include mq(sm) {
+      padding: 37px 24px 41px;
+      border-radius: 0;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: center;
+    column-gap: 40px;
+
+    @include mq(sm) {
+      display: block;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px 40px;
+
+    @include mq(sm) {
+      gap: 0;
+    }
+
+    &:not(:first-child) {
+      @include mq(sm) {
+        margin-top: 21px;
+        gap: 0 16px;
+      }
+
+      .c-nav-footer__item {
+        @include mq(sm) {
+          width: calc(50% - 8px);
+        }
+      }
+
+      .c-nav-footer__link {
+        @include mq(sm) {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__item {
+    font-size: 1.4rem;
+    line-height: calc(20 / 14);
+
+    &.-full-sp {
+      @include mq(sm) {
+        width: 100%;
+        text-align: center;
+      }
+
+      &:not(:first-child) {
+        @include mq(sm) {
+          margin-top: 18px;
+        }
+      }
+    }
+  }
+
+  &__link {
+    color: $color-white;
+
+    &.-border-inline {
+      position: relative;
+      display: inline-block;
+      border: 1px solid $color-white;
+      height: 40px;
+      padding: 10px 43px 10px 15px;
+      border-radius: 4px;
+
+      @include mq(sm) {
+        padding: 10px 30px 10px 15px;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 13px;
+        right: 23px;
+        width: 7px;
+        height: 12px;
+        background: url(~/assets/image/common/ico_arrow_right_white.svg)
+          no-repeat 0 0;
+        background-size: contain;
+
+        @include mq(sm) {
+          right: 10px;
+        }
+      }
+    }
+  }
+
+  &__copyright {
+    margin-top: 16px;
+    text-align: center;
+    color: $color-gray;
+    font-size: 1.4rem;
+    line-height: calc(20 / 14);
+
+    @include mq(sm) {
+      margin-top: 23px;
+    }
+  }
+}

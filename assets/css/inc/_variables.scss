@@ -1,0 +1,75 @@
+// breakpoint
+$conf-breakpoint: (
+  'sm': 'all and (max-width: 896px)',
+  'md': 'all and (min-width: 897px)',
+);
+
+// font
+$font-base: '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ Pro',
+  'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, sans-serif;
+
+// color
+$color-white: #fff;
+$color-black: #000;
+$color-ink: #14181d;
+$color-main: #222831;
+$color-gray: #717a89;
+$color-geyser: #d6dde8;
+$color-silver: #aeb7c2;
+$color-charcoal: #3c4048;
+$color-fog: #e9ecef;
+$color-cloud: #f4f5f7;
+$color-violet: #532eaa;
+$color-purple: #6437cb;
+$color-iris: #f1eefc;
+$color-orchid: #f7f5fd;
+$color-lilac: #fbfafe;
+$color-wisteria: #e0d7f5;
+$color-lavender: #ece6fa;
+$color-apple: #d9232a;
+$color-rose: #fc3048;
+$color-red: #ff2931;
+$color-yellow: #ffcc2e;
+$color-snow: #f9fafb;
+
+// gradient
+$gradient-blue: linear-gradient(90deg, #5079e8 0%, #6437cb 100%);
+$gradient-orange: linear-gradient(90deg, #6437cb 0%, #e88a50 100%);
+
+// z-index
+$z-index-nav-global: 10;
+$z-index-header-bar: 9;
+$z-index-float-bar: 9;
+$z-index-box-memo: 2;
+
+$colors: (
+  'white': $color-white,
+  'black': $color-black,
+  'ink': $color-ink,
+  'main': $color-main,
+  'gray': $color-gray,
+  'geyser': $color-geyser,
+  'silver': $color-silver,
+  'fog': $color-fog,
+  'cloud': $color-cloud,
+  'violet': $color-violet,
+  'purple': $color-purple,
+  'iris': $color-iris,
+  'orchid': $color-orchid,
+  'lilac': $color-lilac,
+  'wisteria': $color-wisteria,
+  'lavender': $color-lavender,
+  'apple': $color-apple,
+  'rose': $color-rose,
+  'red': $color-red,
+  'yellow': $color-yellow,
+  'snow': $color-snow,
+  'gradient-blue': $gradient-blue,
+  'gradient-orange': $gradient-orange,
+);
+
+:root {
+  @each $color, $value in $colors {
+    --color-#{$color}: #{$value};
+  }
+}

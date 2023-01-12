@@ -1,0 +1,92 @@
+.c-header-bar-sticky {
+  $this: &;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: $z-index-header-bar;
+  width: 100%;
+  padding: 0 64px 0 calc(18.75% + 64px);
+  background-color: $color-fog;
+
+  @include mq-max(1279) {
+    padding: 0;
+    background-color: $color-snow;
+  }
+
+  &.-pc-hide {
+    @include mq-min(1280) {
+      display: none;
+    }
+  }
+
+  &.-sp-hide {
+    @include mq-max(1279) {
+      display: none;
+    }
+  }
+
+  &__in {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1024px;
+    height: 80px;
+    margin: 0 auto;
+    padding: 18px 0;
+
+    @include mq-max(1279) {
+      max-width: none;
+      height: 56px;
+      padding: 8px 16px;
+      border-bottom: 2px solid $color-fog;
+    }
+  }
+
+  &__back {
+    flex: 0 0 auto;
+
+    @include mq-min(1280) {
+      display: none;
+    }
+
+    img {
+      display: block;
+      width: 24px;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 0 16px;
+    font-size: 2.4rem;
+    font-weight: bold;
+
+    @include mq-max(1279) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      gap: 0 8px;
+      font-size: 1.6rem;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__button {
+    flex: 0 0 auto;
+    margin-right: -24px;
+
+    @include mq-max(1279) {
+      margin-right: 0;
+    }
+
+    .c-button-text {
+      @include mq-max(1279) {
+        min-height: 40px;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+.c-pagination {
+  margin-top: 32px;
+  text-align: center;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 8px;
+  }
+
+  &__link {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border: 1px solid $color-purple;
+    font-weight: 500;
+    border-radius: 4px;
+    line-height: 40px;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+
+    &.-first {
+      background: url(~/assets/image/common/ico_arrow_first_purple.svg) center
+        center no-repeat;
+
+      &.-disabled {
+        border: 1px solid $color-silver;
+        pointer-events: none;
+        background: $color-cloud
+          url(~/assets/image/common/ico_arrow_first_gray.svg) center center
+          no-repeat;
+      }
+
+      @include mq(sm) {
+        display: none;
+      }
+    }
+
+    &.-prev {
+      background: url(~/assets/image/common/ico_arrow_prev_purple.svg) center
+        center no-repeat;
+
+      &.-disabled {
+        border: 1px solid $color-silver;
+        pointer-events: none;
+        background: $color-cloud
+          url(~/assets/image/common/ico_arrow_prev_gray.svg) center center
+          no-repeat;
+      }
+    }
+
+    &.-next {
+      background: url(~/assets/image/common/ico_arrow_next_purple.svg) center
+        center no-repeat;
+
+      &.-disabled {
+        border: 1px solid $color-silver;
+        pointer-events: none;
+        background: $color-cloud
+          url(~/assets/image/common/ico_arrow_next_gray.svg) center center
+          no-repeat;
+      }
+    }
+
+    &.-last {
+      background: url(~/assets/image/common/ico_arrow_last_purple.svg) center
+        center no-repeat;
+
+      &.-disabled {
+        border: 1px solid $color-silver;
+        pointer-events: none;
+        background: $color-cloud
+          url(~/assets/image/common/ico_arrow_last_gray.svg) center center
+          no-repeat;
+      }
+
+      @include mq(sm) {
+        display: none;
+      }
+    }
+
+    &:hover {
+      background-color: $color-orchid;
+    }
+
+    &.-active {
+      background-color: $color-purple;
+      color: $color-white;
+      font-weight: bold;
+    }
+
+    &.-dotted {
+      border: none;
+      background: url(~/assets/image/common/ico_dotted_purple.svg) center center
+        no-repeat;
+    }
+  }
+}

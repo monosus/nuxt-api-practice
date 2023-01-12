@@ -1,0 +1,63 @@
+.c-wrapper {
+  $this: &;
+  position: relative;
+  min-width: 1280px;
+  max-width: 1920px;
+  min-height: 100%;
+  margin: 0 auto;
+  background-color: $color-white;
+  box-shadow: 10px 0 30px rgba($color-main, 0.1);
+
+  &__nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: $z-index-nav-global;
+    width: 18.75%;
+    height: 100%;
+  }
+
+  &__main {
+    position: relative;
+  }
+}
+
+.c-wrapper-member {
+  position: relative;
+  max-width: 1920px;
+  min-height: 100%;
+  margin: 0 auto;
+  background-color: $color-snow;
+  box-shadow: 10px 0 30px rgba($color-main, 0.1);
+
+  &__nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: $z-index-nav-global;
+    width: 18.75%;
+    height: 100%;
+
+    @include mq-max(1279) {
+      position: static;
+      width: auto;
+      height: 56px;
+    }
+
+    &.-sp-hide {
+      @include mq-max(1279) {
+        display: none;
+      }
+    }
+  }
+
+  &__main {
+    position: relative;
+  }
+}
+
+.c-wrapper-register {
+  position: relative;
+  min-height: 100%;
+  background-color: $color-snow;
+}

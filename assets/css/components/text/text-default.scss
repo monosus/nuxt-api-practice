@@ -1,0 +1,32 @@
+.c-text-default {
+  font-size: var(--text-font-size, 1.6rem);
+  line-height: var(--text-line-height, 1);
+
+  &.-fw-bold {
+    font-weight: bold;
+  }
+
+  &.-align-left {
+    text-align: left;
+  }
+
+  &.-align-center {
+    text-align: center;
+  }
+
+  &.-align-right {
+    text-align: right;
+  }
+
+  &.-color-red {
+    color: $color-red;
+  }
+
+  &.-color-gray {
+    color: $color-gray;
+  }
+
+  &.-color-purple {
+    color: $color-purple;
+  }
+}

@@ -1,0 +1,69 @@
+.c-text-area {
+  display: block;
+  width: 100%;
+  height: 160px;
+  padding: 10px 15px;
+  background-color: $color-white;
+  border: 1px solid $color-silver;
+  border-radius: 4px;
+  color: $color-main;
+  font-family: $font-base;
+  font-size: 1.6rem;
+  line-height: calc(26 / 16);
+  transition: all 0.2s ease-in-out;
+
+  &::-webkit-input-placeholder {
+    color: $color-silver;
+  }
+
+  &::-moz-placeholder {
+    color: $color-silver;
+  }
+
+  &:-ms-input-placeholder {
+    color: $color-silver;
+  }
+
+  &:-moz-placeholder {
+    color: $color-silver;
+  }
+
+  &:hover {
+    background-color: $color-orchid;
+  }
+
+  &:focus {
+    background-color: $color-white;
+    border: 1px solid $color-purple;
+  }
+
+  &:disabled {
+    background-color: $color-cloud;
+    color: $color-silver;
+    opacity: 1;
+  }
+
+  &.-error {
+    background-color: rgba($color-red, 0.05);
+    border: 1px solid $color-red;
+  }
+
+  // resize
+  &.-resize {
+    resize: none;
+  }
+
+  // size
+  &.-sm {
+    height: 96px;
+  }
+
+  &.-lg {
+    height: 400px;
+  }
+  &.-sm-lg {
+    @include mq(sm) {
+      height: 240px;
+    }
+  }
+}

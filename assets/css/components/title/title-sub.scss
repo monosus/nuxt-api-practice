@@ -1,0 +1,17 @@
+.c-title-sub {
+  font-weight: bold;
+
+  &__title {
+    display: block;
+    font-size: 2rem;
+    line-height: calc(29/20);
+  }
+
+  &__subtitle {
+    display: block;
+    margin-top: 2px;
+    color: $color-purple;
+    font-size: 1.4rem;
+    line-height: calc(20/14);
+  }
+}

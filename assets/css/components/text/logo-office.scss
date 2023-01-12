@@ -1,0 +1,33 @@
+.c-logo-office {
+  $root: &;
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+
+  &__logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: $color-white;
+  }
+
+  &__name {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: calc(16 / 12);
+    color: $color-main;
+  }
+
+  &.-size-md {
+    #{$root}__logo {
+      width: 40px;
+      height: 40px;
+    }
+
+    #{$root}__name {
+      font-size: 1.4rem;
+      line-height: calc(24 / 14);
+    }
+  }
+}

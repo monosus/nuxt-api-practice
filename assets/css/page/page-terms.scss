@@ -1,0 +1,31 @@
+.p-box-terms {
+  max-width: 720px;
+  margin: 104px auto 72px;
+
+  @include mq(sm) {
+    margin-top: 88px;
+    padding: 0 20px;
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &__sub {
+    margin-top: 14px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.56;
+  }
+
+  &__detail {
+    margin-top: 30px;
+  }
+
+  &__head {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+}

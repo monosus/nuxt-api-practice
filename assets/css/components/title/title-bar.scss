@@ -1,0 +1,19 @@
+.c-title-bar {
+  position: relative;
+  z-index: 2;
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: 160px;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $color-fog;
+    z-index: -1;
+
+    @include mq(sm) {
+      height: 96px;
+    }
+  }
+}

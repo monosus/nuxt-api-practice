@@ -1,0 +1,43 @@
+.c-text-info {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  text-align: right;
+
+  &__text {
+    position: relative;
+    display: inline-block;
+    padding-left: 28px;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      background: url(~/assets/image/common/ico_info_purple.svg) no-repeat;
+      background-size: contain;
+      transform: translateY(-50%);
+      content: '';
+    }
+
+    a {
+      display: inline-block;
+    }
+  }
+}
+
+.c-text-copy {
+  display: inline-block;
+  margin-top: 16px;
+  color: $color-purple;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.c-text-with-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}

@@ -1,0 +1,13 @@
+<svg id="icon_lock" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="Group_42798" data-name="Group 42798">
+    <g id="Group_42772" data-name="Group 42772" transform="translate(-436 -2934)">
+      <g id="arrow_drop_down_black_24dp" transform="translate(436 2934)">
+        <path id="Path_11028" data-name="Path 11028" d="M0,0H24V24H0Z" fill="none"/>
+        <g id="Group_42770" data-name="Group 42770" transform="translate(0 -1.408)">
+          <path id="Path_11029" data-name="Path 11029" d="M8.71,11.71,11.3,14.3a1,1,0,0,0,1.41,0l2.59-2.59A1,1,0,0,0,14.59,10H9.41A1,1,0,0,0,8.71,11.71Z" transform="translate(0 5)" fill="#aeb7c2"/>
+          <path id="Path_11106" data-name="Path 11106" d="M8.71,11.71,11.3,14.3a1,1,0,0,0,1.41,0l2.59-2.59A1,1,0,0,0,14.59,10H9.41A1,1,0,0,0,8.71,11.71Z" transform="translate(24.008 21) rotate(180)" fill="#aeb7c2"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

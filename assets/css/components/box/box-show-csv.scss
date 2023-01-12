@@ -1,0 +1,35 @@
+.c-box-show-csv {
+  display: inline-flex;
+  margin: 17px 0 35px;
+  padding: 12px 24px;
+  background-color: $color-cloud;
+  border-radius: 4px;
+
+  &__text {
+    flex: 0 0 auto;
+    margin-right: 24px;
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
+
+  &__file {
+    flex: 1;
+    position: relative;
+    padding-left: 28px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 1.5;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      background: url(~/assets/image/common/ico_document_purple.svg) no-repeat
+        left top;
+      background-size: contain;
+    }
+  }
+}

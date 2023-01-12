@@ -1,0 +1,35 @@
+.c-loader {
+  margin: -28px 0;
+
+  > svg {
+    animation: 1.6s linear 0s infinite normal none running loader;
+
+    > circle {
+      animation: 1.1s ease-in-out 0s infinite normal none running spinner;
+    }
+  }
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    stroke-dasharray: 1,400;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 135.0,400;
+    stroke-dashoffset: -58.5;
+  }
+  100% {
+    stroke-dasharray: 135.0,400;
+    stroke-dashoffset: -198.9;
+  }
+}

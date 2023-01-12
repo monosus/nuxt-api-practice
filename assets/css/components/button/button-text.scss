@@ -1,0 +1,130 @@
+.c-button-text {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--button-width, auto);
+  min-height: 44px;
+  padding: 5px 24px;
+  border-radius: 4px;
+  border: none;
+  text-align: center;
+  color: $color-white;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: calc(26 / 16);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-family: $font-base;
+
+  // style
+  &.-purple {
+    background-color: $color-purple;
+
+    &:hover {
+      background-color: $color-violet;
+    }
+  }
+
+  &.-outline-purple {
+    background-color: transparent;
+    border: 1px solid $color-purple;
+    color: $color-purple;
+
+    &:hover {
+      background-color: $color-orchid;
+    }
+  }
+
+  &.-red {
+    background-color: $color-red;
+
+    &:hover {
+      background-color: $color-apple;
+    }
+  }
+
+  &.-outline-red {
+    background-color: transparent;
+    border: 1px solid $color-red;
+    color: $color-red;
+
+    &:hover {
+      background-color: rgba($color-red, 0.05);
+    }
+  }
+
+  &.-black {
+    background-color: $color-main;
+
+    &:hover {
+      background-color: $color-ink;
+    }
+  }
+
+  &.-outline-black {
+    background-color: transparent;
+    border: 1px solid $color-main;
+    color: $color-main;
+  }
+
+  &.-outline-purple,
+  &.-outline-red,
+  &.-outline-black {
+    padding-left: 23px;
+    padding-right: 23px;
+  }
+
+  // font-size
+  &.-fs-sm {
+    font-size: 1.4rem;
+    line-height: calc(24 / 14);
+  }
+
+  // radius
+  &.-radius-22 {
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 22px;
+
+    &.-outline-purple,
+    &.-outline-red,
+    &.-outline-black {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  // size
+  &.-xs {
+    min-height: 38px;
+  }
+
+  &.-sm {
+    min-height: 40px;
+  }
+
+  &.-lg {
+    min-height: 48px;
+  }
+
+  // disabled
+  &:disabled,
+  &:disabled:hover,
+  &[aria-disabled='true'],
+  &[aria-disabled='true']:hover {
+    background-color: $color-silver;
+    color: $color-white;
+    pointer-events: none;
+  }
+
+  &.-outline-purple:disabled,
+  &.-outline-red:disabled,
+  &.-outline-black:disabled,
+  &.-outline-purple[aria-disabled='true'],
+  &.-outline-red[aria-disabled='true'],
+  &.-outline-black[aria-disabled='true'] {
+    background-color: transparent;
+    border: 1px solid $color-silver;
+    color: $color-silver;
+  }
+}

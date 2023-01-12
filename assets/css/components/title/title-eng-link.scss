@@ -1,0 +1,28 @@
+.c-title-eng-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__title-en {
+    display: block;
+    font-family: 'EB Garamond', serif;
+    font-size: 5rem;
+    font-weight: bold;
+    line-height: 1;
+
+    @include mq(sm) {
+      font-size: 4rem;
+    }
+  }
+
+  &__title-jp {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 0 8px;
+    background-color: $color-yellow;
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 1;
+    vertical-align: top;
+  }
+}

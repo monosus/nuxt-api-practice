@@ -1,0 +1,95 @@
+.c-hero-detail {
+  line-height: 1;
+
+  @include mq(sm) {
+    margin: 0 -20px;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 8px;
+
+    @include mq(sm) {
+      border-radius: 0;
+    }
+  }
+}
+
+.c-banner-hero-service {
+  position: relative;
+  padding-bottom: 90px;
+
+  @include mq(sm) {
+    margin: 0 -20px;
+  }
+
+  &__figure {
+    position: relative;
+    border-radius: 8px 300px 8px 0px;
+    padding-top: 56.25%;
+    overflow: hidden;
+
+    @include mq(sm) {
+      border-radius: 0 106px 0 0;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__cover {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__heading {
+    background-color: $color-snow;
+    border-radius: 0px 8px 0px 0px;
+    min-width: 29.5vw;
+    padding: 24px 30px 4px 0;
+
+    @include mq(sm) {
+      padding: 20px 24px 0 20px;
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 3.6rem;
+    line-height: calc(48 / 36);
+    text-align: left;
+    color: $color-main;
+
+    @include mq(sm) {
+      font-size: 2.4rem;
+    }
+  }
+
+  &__text {
+    font-weight: bold;
+    font-size: 1.8rem;
+    line-height: calc(22 / 18);
+    color: $color-purple;
+    margin-top: 2px;
+
+    @include mq(sm) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__label {
+    margin-top: 16px;
+
+    @include mq(sm) {
+      padding-left: 20px;
+    }
+  }
+}

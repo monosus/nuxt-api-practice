@@ -1,0 +1,61 @@
+.c-box-memo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: $z-index-box-memo;
+  width: 28.75%;
+  height: 100%;
+
+  &__in {
+    overflow: hidden;
+    position: sticky;
+    top: 80px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: $color-cloud;
+  }
+
+  &__form {
+    flex: 0 0 auto;
+    padding: 32px;
+    box-shadow: 0px 1px 4px rgba($color-black, 0.16);
+  }
+
+  &__form-lower {
+    margin-top: 8px;
+    text-align: right;
+  }
+
+  & &__form-button {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  &__detail {
+    overflow: auto;
+    flex: 1;
+  }
+
+  &__detail-in {
+    padding: 24px 32px 0;
+  }
+
+  &__list {
+    margin-top: 24px;
+  }
+
+  &__item {
+    padding-bottom: 20px;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $color-silver;
+    }
+
+    &:not(:first-child) {
+      padding-top: 10px;
+    }
+  }
+}

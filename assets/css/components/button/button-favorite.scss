@@ -1,0 +1,82 @@
+.c-button-favorite {
+  $root: &;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  line-height: 1;
+  border: 0;
+  text-transform: none;
+  font-family: inherit;
+  appearance: button;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    flex: 0 0 auto;
+
+    svg {
+      display: block;
+      width: 32px;
+      height: 32px;
+      color: rgba($color-main, 0.7);
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
+  &__text {
+    font-weight: bold;
+    font-size: 1.6rem;
+    line-height: calc(26 / 16);
+    color: $color-gray;
+    margin-left: 2px;
+
+    @include mq(md) {
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
+  &:hover {
+    @include mq(md) {
+      opacity: 0.8;
+    }
+
+    #{$root}__icon svg {
+      @include mq(md) {
+        color: rgba($color-gray, 0.7);
+      }
+    }
+
+    &.-active,
+    &.-active.-text {
+      opacity: 1;
+
+      #{$root}__text {
+        color: $color-violet;
+      }
+
+      #{$root}__icon svg {
+        @include mq(md) {
+          color: $color-violet;
+        }
+      }
+    }
+  }
+
+  &.-active,
+  &.-active.-text {
+    #{$root}__text,
+    #{$root}__icon svg {
+      color: $color-purple;
+    }
+  }
+
+  &.-text {
+    #{$root}__icon svg {
+      width: 44px;
+      height: 43px;
+      filter: drop-shadow(0px 0px 4px rgba($color-black, 0.3));
+    }
+  }
+}

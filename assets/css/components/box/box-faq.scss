@@ -1,0 +1,81 @@
+.c-box-faq {
+  $root: &;
+  position: relative;
+  border-bottom: 1px solid $color-silver;
+
+  &__question,
+  &__answer-in {
+    padding-left: 36px;
+    position: relative;
+    font-size: 1.6rem;
+    line-height: calc(26 / 16);
+    color: $color-main;
+
+    &::before {
+      left: 0;
+      font-weight: bold;
+      font-size: 1.6rem;
+      line-height: calc(26 / 16);
+      color: $color-purple;
+      position: absolute;
+    }
+  }
+
+  &__question {
+    font-weight: bold;
+    padding: 20px 44px 18px 36px;
+    cursor: pointer;
+    z-index: 4;
+
+    &::before {
+      content: 'Q：';
+      top: calc(50% + 1px);
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      width: 24px;
+      height: 24px;
+      margin-top: -12px;
+      background: url(~/assets/image/common/ico_arrow_down_purple_02.svg) no-repeat;
+      background-size: contain;
+      transition: transform 0.2s ease;
+    }
+
+    @include mq(md) {
+      &:hover {
+        background-color: $color-orchid;
+      }
+    }
+  }
+
+  &__answer {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+  }
+
+  &__answer-in {
+    padding: 12px 0 23px 36px;
+
+    &::before {
+      content: 'A：';
+      top: 11px;
+    }
+  }
+
+  &.-open {
+    #{$root}__question {
+      padding-bottom: 18px;
+      border-bottom: 1px dashed $color-silver;
+
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

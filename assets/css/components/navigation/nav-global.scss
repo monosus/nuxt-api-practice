@@ -1,0 +1,180 @@
+.c-nav-global {
+  $this: &;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 8px 24px 24px;
+  border-radius: 0 0 100px 0;
+  background-color: $color-main;
+  box-shadow: 8px 8px 30px rgba($color-main, 0.4);
+
+  &__logo {
+    flex: 0 0 auto;
+    width: 184px;
+    margin-left: -15px;
+
+    > img {
+      display: block;
+    }
+  }
+
+  &__container {
+    overflow: auto;
+    flex: 1;
+    margin-top: -5px;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba($color-black, 0.5);
+      border-radius: 10px;
+    }
+  }
+
+  &__list-main {
+    > li:not(:first-child) {
+      margin-top: 8px;
+    }
+  }
+
+  &__sub-menu {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+
+    &.-open {
+      max-height: none;
+    }
+  }
+
+  &__list-sub {
+    position: relative;
+    padding-top: 5px;
+    padding-left: 30px;
+
+    &::before {
+      position: absolute;
+      top: 14px;
+      left: 18px;
+      bottom: 12px;
+      width: 1px;
+      background-color: rgba($color-white, 0.2);
+      content: '';
+    }
+  }
+
+  &__link,
+  &__link-sub {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: $color-white;
+    opacity: 0.6;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &.-active {
+      background-color: rgba($color-purple, 0.3);
+      opacity: 1;
+    }
+
+    &.-arrow::after {
+      position: absolute;
+      top: 50%;
+      right: 9px;
+      width: 24px;
+      height: 24px;
+      background: url(~/assets/image/common/ico_arrow_up_white.svg) no-repeat;
+      background-size: contain;
+      transform: translateY(-50%) rotate(180deg);
+      content: '';
+    }
+
+    &.-open {
+      opacity: 1;
+
+      &::after {
+        transform: translateY(-50%) rotate(0);
+      }
+    }
+  }
+
+  &__link-sub {
+    padding: 10px 16px;
+  }
+
+  &__icon {
+    flex: 0 0 auto;
+    width: 24px;
+    margin-right: 8px;
+
+    > img {
+      display: block;
+    }
+  }
+
+  &__profile {
+    flex: 0 0 auto;
+    margin: 0 4px;
+    padding-top: 22px;
+    border-top: 1px solid rgba($color-white, 0.2);
+  }
+
+  &__profile-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: $color-white;
+  }
+
+  &__profile-text {
+    margin-top: 4px;
+    font-size: 1.2rem;
+    color: rgba($color-white, 0.6);
+    line-height: 1.33;
+  }
+
+  &__logout {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: $color-white;
+    opacity: 0.6;
+
+    &:hover {
+      opacity: 1;
+      color: $color-red;
+
+      #{$this}__logout-icon {
+        background-image: url(~/assets/image/common/ico_logout_red.svg);
+      }
+    }
+  }
+
+  &__logout-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    background: url(~/assets/image/common/ico_logout_white.svg) no-repeat;
+    background-size: contain;
+  }
+}

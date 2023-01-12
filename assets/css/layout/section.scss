@@ -1,0 +1,104 @@
+.l-section-default {
+  background-color: $color-white;
+  min-width: 1280px;
+  max-width: 1920px;
+  margin: 0 auto;
+
+  &__in {
+    position: relative;
+    padding: 42px 40px 64px calc(18.75% + 40px);
+
+    &:not(:last-child) {
+      border-bottom: 2px solid $color-fog;
+    }
+
+    &:last-child {
+      padding-bottom: 160px;
+    }
+
+    &.-pad-memo {
+      padding-right: calc(28.75% + 56px);
+    }
+
+    & + & {
+      padding-top: 64px;
+      border-top: 14px solid $color-cloud;
+    }
+  }
+}
+
+.l-section-gray {
+  padding: 32px 40px;
+  border-radius: 16px;
+  background-color: $color-cloud;
+}
+
+.l-section-table {
+  margin-top: 48px;
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 8px;
+  }
+}
+
+.l-section-member {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 64px 0 calc(18.75% + 64px);
+
+  @include mq-max(1279) {
+    padding: 0;
+  }
+
+  &__in {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 40px 0 80px;
+
+    @include mq-max(1279) {
+      width: 83.2%;
+    }
+
+    @include mq(sm) {
+      width: auto;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  &__building-related {
+    & + & {
+      padding-top: 72px;
+
+      @include mq(sm) {
+        padding-top: 80px;
+      }
+    }
+
+    &:last-child {
+      padding-top: 81px;
+
+      @include mq(sm) {
+        padding-top: 74px;
+      }
+    }
+  }
+}
+
+.l-section-register {
+  padding-top: 56px;
+
+  &__in {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 54px 0 160px;
+
+    @include mq(sm) {
+      max-width: none;
+      padding: 32px 20px 96px;
+    }
+  }
+}

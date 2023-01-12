@@ -1,0 +1,559 @@
+.c-nav-global-member {
+  $this: &;
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  padding: 40px 24px 24px;
+  border-radius: 0 0 100px 0;
+  background-color: rgba($color-white, 0.8);
+  box-shadow: 4px 4px 20px rgba($color-main, 0.15);
+  backdrop-filter: blur(10px);
+
+  @include mq-max(1279) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $z-index-nav-global;
+    width: 100%;
+    height: 56px;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    border-bottom: 2px solid $color-fog;
+    background-color: $color-cloud;
+    backdrop-filter: none;
+  }
+
+  &__in {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    @include mq-max(1279) {
+      overflow: auto;
+      position: fixed;
+      top: 56px;
+      bottom: 0;
+      left: 0;
+      z-index: $z-index-nav-global;
+      display: block;
+      width: 340px;
+      height: auto;
+      background-color: $color-white;
+      transform: translateX(-101%);
+      transition: transform 0.3s ease-out;
+    }
+
+    @include mq(sm) {
+      width: 90.667%;
+    }
+
+    &.-open {
+      @include mq-max(1279) {
+        transform: translateX(0);
+      }
+    }
+
+    @include mq(md) {
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: none;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba($color-black, 0.5);
+        border-radius: 10px;
+      }
+    }
+  }
+
+  &__logo {
+    flex: 0 0 auto;
+    width: 177px;
+    margin-left: 8px;
+
+    @include mq-max(1279) {
+      display: none;
+    }
+
+    > img {
+      display: block;
+    }
+  }
+
+  &__logo-sm {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    display: block;
+    width: 30px;
+    transform: translateX(-50%);
+
+    @include mq-min(1280) {
+      display: none;
+    }
+
+    > img {
+      display: block;
+    }
+  }
+
+  &__page-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1.8rem;
+    font-weight: bold;
+    transform: translate(-50%, -50%);
+
+    @include mq-min(1280) {
+      display: none;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 24px;
+    padding: 6px 3px;
+    cursor: pointer;
+
+    @include mq-min(1280) {
+      display: none;
+    }
+
+    > span {
+      position: absolute;
+      left: 3px;
+      display: block;
+      height: 2px;
+      width: 18px;
+      border-radius: 5px;
+      background: $color-gray;
+      opacity: 1;
+      transform: rotate(0) translateZ(0);
+      transition: all 0.2s ease-in-out;
+
+      &:nth-child(1) {
+        top: 6px;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        top: 11px;
+      }
+
+      &:nth-child(4) {
+        top: 16px;
+      }
+    }
+
+    &.-open > span {
+      &:nth-child(1) {
+        width: 0;
+        left: 50%;
+      }
+
+      &:nth-child(2) {
+        transform: rotate(45deg);
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+
+      &:nth-child(4) {
+        left: 50%;
+        width: 0;
+      }
+    }
+  }
+
+  &__container {
+    overflow: auto;
+    flex: 1;
+    margin-top: 40px;
+
+    @include mq-max(1279) {
+      overflow: visible;
+      margin: 0;
+      padding-top: 8px;
+    }
+  }
+
+  &__list-main {
+    > li {
+      @include mq-max(1279) {
+        position: relative;
+        padding-bottom: 1px;
+
+        &::after {
+          position: absolute;
+          bottom: -1px;
+          left: 24px;
+          right: 24px;
+          height: 1px;
+          background-color: $color-cloud;
+          content: '';
+        }
+
+        &:last-child::after {
+          background-color: $color-silver;
+        }
+      }
+
+      &:not(:first-child) {
+        margin-top: 8px;
+
+        @include mq-max(1279) {
+          margin-top: 0;
+        }
+      }
+    }
+
+    &.-popup-open #{$this}__link.-active {
+      background-color: #e7e9ea;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: $color-main;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: background-color 0.2s ease-out;
+
+    @include mq-max(1279) {
+      height: 55px;
+      padding: 8px 24px;
+      border-radius: 0;
+      font-size: 1.6rem;
+      opacity: 1;
+    }
+
+    &:hover {
+      opacity: 1;
+
+      @include mq-max(1279) {
+        background-color: $color-orchid;
+      }
+    }
+
+    &.-active {
+      @include mq-min(1280) {
+        background-color: $color-cloud;
+        opacity: 1;
+      }
+    }
+
+    &.-arrow::after {
+      @include mq-max(1279) {
+        position: absolute;
+        top: 50%;
+        right: 24px;
+        width: 24px;
+        height: 24px;
+        background: url(~/assets/image/common/ico_arrow_down_purple_02.svg)
+          no-repeat;
+        background-size: contain;
+        transform: translateY(-50%);
+        content: '';
+      }
+    }
+
+    &.-open {
+      @include mq-max(1279) {
+        color: $color-white;
+        background-color: $color-purple;
+      }
+
+      &::after {
+        @include mq-max(1279) {
+          background-image: url(~/assets/image/common/ico_arrow_up_white.svg);
+        }
+      }
+    }
+  }
+
+  &__icon {
+    flex: 0 0 auto;
+    width: 24px;
+    margin-right: 8px;
+
+    > img {
+      display: block;
+    }
+  }
+
+  &__profile {
+    flex: 0 0 auto;
+    margin: 0 4px;
+    padding-top: 22px;
+    border-top: 1px solid rgba($color-silver, 0.2);
+
+    @include mq-max(1279) {
+      border: none;
+      margin: 0;
+    }
+  }
+
+  &__profile-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: $color-main;
+
+    @include mq-max(1279) {
+      padding: 0 24px;
+    }
+  }
+
+  &__profile-text {
+    margin-top: 4px;
+    font-size: 1.2rem;
+    color: rgba($color-main, 0.6);
+    line-height: 1.33;
+
+    @include mq-max(1279) {
+      margin-bottom: 16px;
+      padding: 0 24px;
+    }
+  }
+
+  &__logout {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: $color-main;
+    opacity: 0.6;
+    transition: background-color 0.2s ease-in-out;
+
+    @include mq-max(1279) {
+      position: relative;
+      display: flex;
+      height: 56px;
+      margin: 0;
+      padding: 0 24px;
+      font-size: 1.6rem;
+      color: $color-red;
+      opacity: 1;
+
+      &::after {
+        position: absolute;
+        top: 0;
+        left: 24px;
+        right: 24px;
+        height: 1px;
+        background-color: $color-cloud;
+        content: '';
+      }
+    }
+
+    &:hover {
+      @include mq-min(1280) {
+        opacity: 1;
+        color: $color-red;
+
+        #{$this}__logout-icon {
+          background-image: url(~/assets/image/member/common/ico_logout_red.svg);
+        }
+      }
+
+      @include mq-max(1279) {
+        background-color: rgba($color-red, 0.05);
+      }
+    }
+  }
+
+  &__logout-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    background: url(~/assets/image/member/common/ico_logout_gray.svg) no-repeat;
+    background-size: contain;
+
+    @include mq-max(1279) {
+      background-image: url(~/assets/image/member/common/ico_logout_red.svg);
+    }
+  }
+
+  &__accordion {
+    @include mq-min(1280) {
+      display: none;
+    }
+
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+    background-color: $color-cloud;
+  }
+
+  &__accordion-main {
+    padding: 16px;
+    text-align: center;
+    color: $color-main;
+  }
+
+  &__accordion-main-link {
+    display: inline-block;
+    max-width: 256px;
+    margin: 0 auto;
+    color: $color-main;
+    transition: opacity 0.2s ease-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__accordion-image {
+    display: block;
+    margin: 0 auto 15px;
+  }
+
+  &__accordion-nav {
+    > li:first-child {
+      border-top: 1px solid #e9ebef;
+    }
+
+    > li:not(:last-child) {
+      border-bottom: 1px solid #e9ebef;
+    }
+  }
+
+  &__accordion-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 55px;
+    padding: 8px 48px 8px 56px;
+    font-size: 1.6rem;
+    color: $color-main;
+    transition: background-color 0.2s ease-in-out;
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: 24px;
+      width: 24px;
+      height: 24px;
+      background: url(~/assets/image/common/ico_arrow_next_purple.svg) no-repeat;
+      background-size: contain;
+      transform: translateY(-50%);
+      content: '';
+    }
+
+    &:hover {
+      background-color: $color-orchid;
+    }
+  }
+
+  &__button-sp {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    display: flex;
+    gap: 0 8px;
+
+    @include mq-min(1280) {
+      display: none;
+    }
+
+    .c-button-text {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+
+  &__admin {
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba($color-silver, 0.2);
+
+    @include mq-max(1279) {
+      padding: 0;
+      border-bottom: none;
+    }
+  }
+
+  &__admin-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin-top: 16px;
+    padding: 8px 30px 8px 8px;
+    border: 1px solid $color-purple;
+    border-radius: 4px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.5;
+    color: $color-purple;
+    transition: background-color 0.2s ease-in-out;
+
+    @include mq-max(1279) {
+      height: 56px;
+      padding: 10px 24px;
+      border: none;
+      font-size: 1.6rem;
+      color: $color-main;
+    }
+
+    &:hover {
+      background-color: $color-orchid;
+    }
+  }
+
+  &__admin-icon {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+
+    @include mq-max(1279) {
+      right: 24px;
+    }
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: $z-index-nav-global - 1;
+    background-color: rgba($color-main, 0.2);
+    mix-blend-mode: multiply;
+
+    &.overlay-enter-active,
+    &.overlay-leave-active {
+      transition: 0.2s opacity ease-out;
+    }
+
+    &.overlay-enter-to,
+    &.overlay-leave-from {
+      opacity: 1;
+    }
+
+    &.overlay-enter-from,
+    &.overlay-leave-to {
+      opacity: 0;
+    }
+  }
+}

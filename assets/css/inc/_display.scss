@@ -1,0 +1,15 @@
+._d-none {
+  display: none !important;
+}
+
+@include mq(sm) {
+  ._d-sm-none {
+    display: none !important;
+  }
+}
+
+@include mq(md) {
+  ._d-md-none {
+    display: none !important;
+  }
+}

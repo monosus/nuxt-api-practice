@@ -1,0 +1,203 @@
+.c-banner-service {
+  $root: &;
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  word-wrap: break-word;
+  background: $color-white;
+  overflow: hidden;
+  box-shadow: 1px 1px 20px rgba($color-main, 0.15);
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+
+  @include mq(md) {
+    min-height: 226px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    transition: opacity 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &::before {
+    @include mq(md) {
+      content: '';
+      position: absolute;
+      top: calc(50% + 10px);
+      right: -7px;
+      width: 77px;
+      height: 77px;
+      background: url(~/assets/image/common/ico_arrow_right_black.svg) no-repeat left top;
+      background-size: contain;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+  }
+
+  &__figure {
+    position: relative;
+    overflow: hidden;
+
+    @include mq(md) {
+      clip-path: polygon(24% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    @include mq(sm) {
+      padding-top: 50%;
+    }
+
+    &::after {
+      content: '';
+      width: 97.7px;
+      height: 255.38px;
+      clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+      background: $color-yellow;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      opacity: 0.9;
+      mix-blend-mode: overlay;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__body {
+    position: relative;
+    padding: 30px 0 23px 40px;
+
+    @include mq(sm) {
+      padding: 46px 32px 14px;
+    }
+  }
+
+  &__heading {
+    @include mq(sm) {
+      min-width: 62.933vw;
+      position: absolute;
+      border-radius: 0px 8px 0px 0px;
+      padding: 10px 24px 10px 32px;
+      left: 0;
+      top: -34px;
+      z-index: 5;
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 1.8rem;
+    line-height: calc(28 / 18);
+
+    @include mq(md) {
+      font-size: 2.4rem;
+      line-height: calc(36 / 24);
+    }
+  }
+
+  &__subtitle {
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: calc(22 / 14);
+
+    @include mq(md) {
+      font-size: 1.6rem;
+      line-height: calc(26 / 16);
+    }
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    line-height: calc(24 / 14);
+    color: $color-main;
+    font-weight: bold;
+
+    @include mq(md) {
+      font-size: 1.6rem;
+      line-height: calc(26 / 16);
+      margin-top: 18px;
+    }
+  }
+
+  &__office {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid $color-cloud;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    @include mq(md) {
+      max-width: 336px;
+    }
+  }
+
+  &.-work {
+    background: $color-main;
+
+    &::before {
+      @include mq(md) {
+        top: calc(50% + 7px);
+      }
+    }
+
+    #{$root}__heading {
+      background-color: $color-main;
+    }
+
+    #{$root}__title {
+      color: $color-white;
+    }
+
+    #{$root}__subtitle {
+      color: $color-yellow;
+    }
+
+    #{$root}__text {
+      color: $color-white;
+    }
+
+    .c-logo-office__name {
+      color: $color-white;
+    }
+  }
+
+  &.-life {
+    background: $color-yellow;
+
+    #{$root}__heading {
+      background-color: $color-yellow;
+    }
+
+    #{$root}__title {
+      color: $color-main;
+    }
+
+    #{$root}__subtitle {
+      color: $color-main;
+    }
+
+    #{$root}__text {
+      color: $color-main;
+    }
+
+    #{$root}__office {
+      border-top: 1px solid $color-main;
+    }
+
+    .c-logo-office__name {
+      color: $color-main;
+    }
+  }
+}

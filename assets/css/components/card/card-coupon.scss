@@ -1,0 +1,57 @@
+.c-card-coupon {
+  position: relative;
+  display: flex;
+  word-wrap: break-word;
+  background: $color-white;
+  overflow: hidden;
+  height: 124px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 20px rgba($color-main, 0.15);
+  align-items: center;
+
+  @include mq(sm) {
+    width: 100%;
+  }
+
+  @include mq(md) {
+    transition: transform 0.2s ease-in;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  &__figure {
+    position: relative;
+    width: 160px;
+    flex: 0 0 160px;
+    border-radius: 8px 0px 0px 8px;
+    padding-top: 124px;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__text {
+    flex: 1;
+    font-weight: bold;
+    font-size: 1.6rem;
+    line-height: calc(26 / 16);
+    padding: 16px 32px 16px 28px;
+    color: $color-main;
+
+    > span {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+}
