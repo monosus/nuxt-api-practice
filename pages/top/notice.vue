@@ -232,24 +232,6 @@ export default {
       },
     }
 
-    const noticeList = [
-      {
-        link: '#',
-        date: '2022.12.31',
-        text: 'システムメンテナンスのお知らせ',
-      },
-      {
-        link: '#',
-        date: '2022.12.24',
-        text: '年末年始の営業時間について【H¹T＆提携店含む全店舗】',
-      },
-      {
-        link: '#',
-        date: '2022.12.22',
-        text: 'エレベーター点検の実施',
-      },
-    ]
-
     const setSwiperEl = (swiper) => {
       swiperEl.value = swiper
     }
@@ -270,6 +252,10 @@ export default {
       const mq = window.matchMedia('(max-width: 896px)')
       mq.addEventListener('change', checkMediaQuery)
       isSP.value = mq.matches
+    })
+
+    const { data: noticeList } = await useFetch('/api/notice', {
+      params: { qty: 5 },
     })
 
     const { data: newsList } = await useFetch('/api/news', {

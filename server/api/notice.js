@@ -10,12 +10,9 @@ export default defineEventHandler((event) => {
   for (let i = 0; i < qty; i++) {
     data.push({
       id: uuidv4(),
-      href: '#',
-      src: faker.image.abstract(256, 144, true),
-      title: faker.lorem.sentence(),
-      tagText: 'WORK',
-      tagStyle: 'gradient-blue',
+      link: '#',
       date: format(faker.date.past(), 'yyyy.MM.dd'),
+      text: faker.lorem.sentence(),
     })
   }
 

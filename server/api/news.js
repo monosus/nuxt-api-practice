@@ -1,5 +1,6 @@
 import { faker } from '@faker-js/faker'
 import { v4 as uuidv4 } from "uuid";
+import { format } from 'date-fns'
 
 export default defineEventHandler((event) => {
   const query = getQuery(event)
@@ -12,8 +13,8 @@ export default defineEventHandler((event) => {
       link: '#',
       src: faker.image.abstract(256, 144, true),
       tags: [{ style: 'black', text: 'お知らせ' }],
-      text: faker.lorem.sentence(),
-      date: faker.date.past().toLocaleDateString().replace(),
+      text: faker.lorem.sentences(),
+      date: format(faker.date.past(), 'yyyy.MM.dd'),
     })
   }
 
