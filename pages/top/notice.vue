@@ -42,7 +42,12 @@
         <ul class="p-top-list-news">
           <li v-for="(item, index) in newsList" :key="index">
             <div class="p-top-horizon-line">
-              <CardPost v-bind="item" isTop />
+              <CardPost
+                v-bind="item"
+                :tags="[{ style: 'black', text: item.tag }]"
+                :date="format(new Date(item.createdAt), 'yyyy.MM.dd')"
+                isTop
+              />
             </div>
           </li>
         </ul>
@@ -74,7 +79,10 @@
             <div class="p-top-list-video__in">
               <ul class="p-top-list-video__list">
                 <li v-for="(item, index) in videoList" :key="index">
-                  <CardDefault v-bind="item" />
+                  <CardDefault
+                    v-bind="item"
+                    :date="format(new Date(item.createdAt), 'yyyy.MM.dd')"
+                  />
                 </li>
               </ul>
             </div>
@@ -201,6 +209,8 @@
 import { onMounted, ref } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Pagination } from 'swiper'
+import { format } from 'date-fns'
+import axiosClient from '@/lib/axiosClient'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
@@ -254,24 +264,79 @@ export default {
       isSP.value = mq.matches
     })
 
-    const { data: noticeList } = await useFetch('/api/notice', {
-      params: { qty: 5 },
+    const {
+      data: {
+        data: { newses: newsList },
+      },
+    } = await axiosClient.post(null, {
+      query: `query MyQuery {
+        newses(last: 5) {
+          text
+          link
+          src
+          tag
+          createdAt
+        }
+      }`,
     })
 
-    const { data: newsList } = await useFetch('/api/news', {
-      params: { qty: 5 },
+    const {
+      data: {
+        data: { notices: noticeList },
+      },
+    } = await axiosClient.post(null, {
+      query: `query MyQuery {
+        notices {
+          link
+          text
+          date
+        }
+      }`,
     })
 
-    const { data: favoriteList } = await useFetch('/api/favorite', {
-      params: { qty: 15 },
+    const {
+      data: {
+        data: { favorites: favoriteList },
+      },
+    } = await axiosClient.post(null, {
+      query: `query MyQuery {
+        favorites {
+          link
+          image
+          name
+        }
+      }`,
     })
 
-    const { data: videoList } = await useFetch('/api/video', {
-      params: { qty: 6 },
+    const {
+      data: {
+        data: { videos: videoList },
+      },
+    } = await axiosClient.post(null, {
+      query: `query MyQuery {
+        videos(last: 6) {
+          href
+          src
+          title
+          tagText
+          tagStyle
+          createdAt
+        }
+      }`,
     })
 
-    const { data: couponList } = await useFetch('/api/coupon', {
-      params: { qty: 4 },
+    const {
+      data: {
+        data: { coupons: couponList },
+      },
+    } = await axiosClient.post(null, {
+      query: `query MyQuery {
+        coupons(last: 4) {
+          href
+          image
+          text
+        }
+      }`,
     })
 
     return {
@@ -285,6 +350,7 @@ export default {
       setSwiperEl,
       goToPrevCoupon,
       goToNextCoupon,
+      format,
     }
   },
 }
